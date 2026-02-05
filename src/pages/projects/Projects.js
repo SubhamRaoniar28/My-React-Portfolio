@@ -5,12 +5,13 @@ import GithubRepoCard from "../../components/githubRepoCard/GithubRepoCard";
 import Button from "../../components/button/Button";
 import TopButton from "../../components/topButton/TopButton";
 import { Fade } from "react-reveal";
-import { projectsHeader, projectsData } from "../../portfolio.js";
+import { withPortfolio } from "../../context/PortfolioContext";
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
 
 class Projects extends Component {
   render() {
+    const { projectsHeader, projectsData } = this.props.portfolio.portfolioData;
     const theme = this.props.theme;
     return (
       <div className="projects-main">
@@ -61,4 +62,4 @@ class Projects extends Component {
   }
 }
 
-export default Projects;
+export default withPortfolio(Projects);

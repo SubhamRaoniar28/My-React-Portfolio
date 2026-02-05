@@ -631,7 +631,7 @@ const contactPageData = {
   },
 };
 
-export {
+module.exports = {
   settings,
   seo,
   greeting,

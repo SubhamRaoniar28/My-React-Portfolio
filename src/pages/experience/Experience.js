@@ -4,12 +4,13 @@ import Footer from "../../components/footer/Footer";
 import TopButton from "../../components/topButton/TopButton";
 import ExperienceAccordion from "../../containers/experienceAccordion/ExperienceAccordion.js";
 import "./Experience.css";
-import { experience } from "../../portfolio.js";
+import { withPortfolio } from "../../context/PortfolioContext";
 import { Fade } from "react-reveal";
 import ExperienceImg from "./ExperienceImg";
 
 class Experience extends Component {
   render() {
+    const { experience } = this.props.portfolio.portfolioData;
     const theme = this.props.theme;
     return (
       <div className="experience-main">
@@ -55,4 +56,4 @@ class Experience extends Component {
   }
 }
 
-export default Experience;
+export default withPortfolio(Experience);

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Skills.css";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
-import { skills } from "../../portfolio";
+import { withPortfolio } from "../../context/PortfolioContext";
 import { Fade } from "react-reveal";
 import DataScienceImg from "./DataScienceImg";
 import FullStackImg from "./FullStackImg";
@@ -20,6 +20,7 @@ function GetSkillSvg(props) {
 
 class SkillSection extends Component {
   render() {
+    const { skills } = this.props.portfolio.portfolioData;
     const theme = this.props.theme;
     return (
       <div>
@@ -64,4 +65,4 @@ class SkillSection extends Component {
   }
 }
 
-export default SkillSection;
+export default withPortfolio(SkillSection);

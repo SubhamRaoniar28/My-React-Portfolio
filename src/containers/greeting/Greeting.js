@@ -2,11 +2,13 @@ import React from "react";
 import "./Greeting.css";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import { greeting } from "../../portfolio";
+import { usePortfolio } from "../../context/PortfolioContext";
 import { Fade } from "react-reveal";
 import FeelingProud from "./FeelingProud";
 
 export default function Greeting(props) {
+  const { portfolioData } = usePortfolio();
+  const { greeting } = portfolioData;
   const theme = props.theme;
   return (
     <Fade bottom duration={2000} distance="40px">

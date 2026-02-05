@@ -1,8 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { seo } from "../../portfolio.js";
+import { usePortfolio } from "../../context/PortfolioContext";
 
 function SeoHeader() {
+  const { portfolioData } = usePortfolio();
+  const { seo } = portfolioData;
   return (
     <Helmet>
       <title>{seo.title}</title>
