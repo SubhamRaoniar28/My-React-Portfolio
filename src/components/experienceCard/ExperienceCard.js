@@ -13,7 +13,12 @@ class ExperienceCard extends Component {
         <div className="experience-card-logo-div">
           <img
             className="experience-card-logo"
-            src={require(`../../assests/images/${experience["logo_path"]}`)}
+            src={
+              new URL(
+                `../../assests/images/${experience["logo_path"]}`,
+                import.meta.url
+              ).href
+            }
             alt=""
           />
         </div>
@@ -55,36 +60,36 @@ class ExperienceCard extends Component {
             </div>
           </div>
 
-          <hr style={{ width: "80%", marginBottom: "25px", marginTop: "35px", border: `0.1px solid lightgray` }} />
+          <hr
+            style={{
+              width: "80%",
+              marginBottom: "25px",
+              marginTop: "35px",
+              border: `0.1px solid lightgray`,
+            }}
+          />
 
-          {
-            experience["projects"].map((project) => {
-              return (
-                <div className="experience-card-heading-left">
-                  <h3
-                    className="project-title"
-                    style={{ color: theme.text }}
-                  >
-                    {project.projectName}
-                  </h3>
-                  <p
-                    className="experience-card-company"
-                    style={{ color: theme.text }}
-                  >
-                    ({project.clientName})
-                  </p>
-                  <p
-                    className="experience-card-description"
-                    style={{ color: theme.text }}
-                  >
-                    {project.projectDescription}
-                  </p>
-
-                </div>
-              );
-            })
-          }
-
+          {experience["projects"].map((project) => {
+            return (
+              <div className="experience-card-heading-left">
+                <h3 className="project-title" style={{ color: theme.text }}>
+                  {project.projectName}
+                </h3>
+                <p
+                  className="experience-card-company"
+                  style={{ color: theme.text }}
+                >
+                  ({project.clientName})
+                </p>
+                <p
+                  className="experience-card-description"
+                  style={{ color: theme.text }}
+                >
+                  {project.projectDescription}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
