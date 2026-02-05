@@ -24,7 +24,7 @@ const authenticate = (req, res, next) => {
   }
 };
 
-// GET endpoint to fetch portfolio data
+// GET endpoint to fetch portfolio data (Public)
 app.get("/api/portfolio", async (req, res) => {
   try {
     const data = await redis.get(PORTFOLIO_KEY);
@@ -38,7 +38,7 @@ app.get("/api/portfolio", async (req, res) => {
   }
 });
 
-// PUT endpoint to update portfolio data
+// PUT endpoint to update entire portfolio data
 app.put("/api/portfolio", authenticate, async (req, res) => {
   try {
     const newData = req.body;
@@ -49,6 +49,39 @@ app.put("/api/portfolio", authenticate, async (req, res) => {
     res.json({ message: "Portfolio updated successfully" });
   } catch (error) {
     console.error("Error saving to Redis:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+// PATCH endpoint for partial updates
+app.patch("/api/portfolio", authenticate, async (req, res) => {
+  try {
+    const updates = req.body;
+    const currentData = await redis.get(PORTFOLIO_KEY);
+
+    if (!currentData) {
+      return res
+        .status(404)
+        .json({ error: "Portfolio data not found to patch" });
+    }
+
+    // Simple deep merge for top-level keys
+    const updatedData = { ...currentData };
+    for (const key in updates) {
+      if (typeof updates[key] === "object" && !Array.isArray(updates[key])) {
+        updatedData[key] = { ...updatedData[key], ...updates[key] };
+      } else {
+        updatedData[key] = updates[key];
+      }
+    }
+
+    await redis.set(PORTFOLIO_KEY, updatedData);
+    res.json({
+      message: "Portfolio patched successfully",
+      updatedFields: Object.keys(updates),
+    });
+  } catch (error) {
+    console.error("Error patching Redis:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
