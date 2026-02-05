@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./Educations.css";
 import DegreeCard from "../../components/degreeCard/DegreeCard.js";
-import { degrees } from "../../portfolio";
+import { withPortfolio } from "../../context/PortfolioContext";
 import { Fade } from "react-reveal";
 
 class Educations extends Component {
   render() {
+    const { degrees } = this.props.portfolio.portfolioData;
     const theme = this.props.theme;
     return (
       <div className="main" id="educations">
@@ -26,4 +27,4 @@ class Educations extends Component {
   }
 }
 
-export default Educations;
+export default withPortfolio(Educations);

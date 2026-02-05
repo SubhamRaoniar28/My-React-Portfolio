@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./Certifications.css";
 import { Fade } from "react-reveal";
-import { certifications } from "../../portfolio";
+import { withPortfolio } from "../../context/PortfolioContext";
 import CertificationCard from "../../components/certificationCard/CertificationCard";
 
 class Certifications extends Component {
   render() {
+    const { certifications } = this.props.portfolio.portfolioData;
     const theme = this.props.theme;
     return (
       <div className="main" id="certs">
@@ -26,4 +27,4 @@ class Certifications extends Component {
   }
 }
 
-export default Certifications;
+export default withPortfolio(Certifications);

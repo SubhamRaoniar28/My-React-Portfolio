@@ -631,6 +631,22 @@ const contactPageData = {
   },
 };
 
+const portfolio = {
+  settings,
+  seo,
+  greeting,
+  socialMediaLinks,
+  skills,
+  degrees,
+  certifications,
+  experience,
+  projectsHeader,
+  projectsData,
+  contactPageData,
+};
+
+export default portfolio;
+
 export {
   settings,
   seo,

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./Header.css";
 import { Fade } from "react-reveal";
 import { NavLink, Link } from "react-router-dom";
-import { greeting, settings } from "../../portfolio.js";
 import SeoHeader from "../seoHeader/SeoHeader";
+import { withPortfolio } from "../../context/PortfolioContext";
 
 const onMouseEnter = (event, color) => {
   const el = event.target;
@@ -17,6 +17,7 @@ const onMouseOut = (event) => {
 
 class Header extends Component {
   render() {
+    const { greeting, settings } = this.props.portfolio.portfolioData;
     const theme = this.props.theme;
     console.log(theme);
     const link = settings.isSplash ? "/splash" : "home";
@@ -116,4 +117,4 @@ class Header extends Component {
     );
   }
 }
-export default Header;
+export default withPortfolio(Header);

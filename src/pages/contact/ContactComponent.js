@@ -8,15 +8,16 @@ import BlogsImg from "./BlogsImg";
 import AddressImg from "./AddressImg";
 import { Fade } from "react-reveal";
 import "./ContactComponent.css";
-import { greeting, contactPageData } from "../../portfolio.js";
-
-const ContactData = contactPageData.contactSection;
-const blogSection = contactPageData.blogSection;
-const addressSection = contactPageData.addressSection;
-const phoneSection = contactPageData.phoneSection;
+import { withPortfolio } from "../../context/PortfolioContext";
 
 class Contact extends Component {
   render() {
+    const { greeting, contactPageData } = this.props.portfolio.portfolioData;
+    const ContactData = contactPageData.contactSection;
+    const blogSection = contactPageData.blogSection;
+    const addressSection = contactPageData.addressSection;
+    const phoneSection = contactPageData.phoneSection;
+
     const theme = this.props.theme;
     return (
       <div className="contact-main">
@@ -143,4 +144,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+export default withPortfolio(Contact);
