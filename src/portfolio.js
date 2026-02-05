@@ -12,7 +12,6 @@ TODO:
 8. Play with theme color customizations
 */
 
-
 // Website related settings
 const settings = {
   isSplash: false, // Change this to false if you don't want Splash screen.
@@ -37,9 +36,9 @@ const greeting = {
   nickname: "",
   subTitle:
     "A passionate Software Engineer with 4+ years of experience in Software Industry. Skilled in designing, building & maintaining highly scalable and available software applications.",
-  secondSubtitle: "Love to learn new technologies everyday and apply them through building new projects.",
-  resumeLink:
-    "https://1drv.ms/w/s!AgouOYIBgjsMpCKSpTqIQvycOJW7?e=6kOg5F",
+  secondSubtitle:
+    "Love to learn new technologies everyday and apply them through building new projects.",
+  resumeLink: "https://1drv.ms/w/s!AgouOYIBgjsMpCKSpTqIQvycOJW7?e=6kOg5F",
   portfolio_repository: "https://github.com/SubhamRaoniar28",
 };
 
@@ -174,7 +173,7 @@ const skills = {
         },
         {
           skillName: "NodeJS",
-          fontAwesomeClassname: "simple-icons:node-dot-js",
+          fontAwesomeClassname: "simple-icons:nodedotjs",
           style: {
             color: "#339933",
           },
@@ -239,7 +238,7 @@ const skills = {
       fileName: "DataScienceImg",
       skills: [
         "⚡ As mentioned above, I like to learn new technologies and as a developer everyone should be familiar with latest trending tools & technologies. Data Science and Machine Learning is popular & trending nowadays, and I found it quite interesting.",
-        "⚡ So far, I've done a few courses related to the same from Coursera, such as \"Python for Everybody Specialization\", \"Introduction to Data Science in Python\", and learned data computing & manipulating libraries such as Numpy & Pandas.",
+        '⚡ So far, I\'ve done a few courses related to the same from Coursera, such as "Python for Everybody Specialization", "Introduction to Data Science in Python", and learned data computing & manipulating libraries such as Numpy & Pandas.',
       ],
       softwareSkills: [
         {
@@ -364,13 +363,13 @@ const certifications = {
       title: "Java Multithreading",
       subtitle: "- John Purcell",
       logo_path: "udemy-logo.png",
-      certificate_link:
-        "http://ude.my/UC-2029a6c9-08b6-4622-8427-48a8c111d061",
+      certificate_link: "http://ude.my/UC-2029a6c9-08b6-4622-8427-48a8c111d061",
       alt_name: "IBM",
       color_code: "#FFB6C1",
     },
     {
-      title: "Building Scalable Java Microservices with Spring Boot and Spring Cloud on GCP",
+      title:
+        "Building Scalable Java Microservices with Spring Boot and Spring Cloud on GCP",
       subtitle: "- GCP Training",
       logo_path: "google_logo.png",
       certificate_link:
@@ -451,7 +450,8 @@ const certifications = {
       color_code: "#333333",
     },
     {
-      title: "The Science of Success: What Researchers Know that You Should Know",
+      title:
+        "The Science of Success: What Researchers Know that You Should Know",
       subtitle: "- Paula Caproni",
       logo_path: "uni-of-michigan-logo.png",
       certificate_link:
@@ -480,26 +480,28 @@ const experience = {
           logo_path: "TCS-logo.png",
           duration: "October 2015 - June 2020",
           location: "Bangalore, Karnataka",
-          description:
-            "",
+          description: "",
           color: "#0879bf",
           projects: [
             {
               projectName: "Business Deposits",
               clientName: "Client - U.S Bank",
-              projectDescription: "Business Deposits is a complex web application made for small businesses and entrepreneurs so that they can open their business account in U.S. Bank as per their need. Created multiple web services, developed controller, service, repository classes and wrote business logic into service class."
+              projectDescription:
+                "Business Deposits is a complex web application made for small businesses and entrepreneurs so that they can open their business account in U.S. Bank as per their need. Created multiple web services, developed controller, service, repository classes and wrote business logic into service class.",
             },
             {
               projectName: "Credit Bridge Core Services",
               clientName: "Client - Wells Fargo Bank",
-              projectDescription: "Credit Bridge is an intranet web application for Wells Fargo bank to audit various database tables within the bank. Built the application from scratch, starting from creating RESTful APIs, writing unit testcases for those services, till application build and deployment."
+              projectDescription:
+                "Credit Bridge is an intranet web application for Wells Fargo bank to audit various database tables within the bank. Built the application from scratch, starting from creating RESTful APIs, writing unit testcases for those services, till application build and deployment.",
             },
             {
               projectName: "Intel Customized Security Solution (McAfee)",
               clientName: "Client - Intel",
-              projectDescription: "McAfee is well known for its various anti-virus products and providing security solutions throughout the world. Customized, tested (both automation and manual), and deployed their core anti-virus products based on the requirements of their around 100s of OEM (such as DELL, HP, ASUS) and non-OEM customers and delivered zero defect products to production."
+              projectDescription:
+                "McAfee is well known for its various anti-virus products and providing security solutions throughout the world. Customized, tested (both automation and manual), and deployed their core anti-virus products based on the requirements of their around 100s of OEM (such as DELL, HP, ASUS) and non-OEM customers and delivered zero defect products to production.",
             },
-          ]
+          ],
         },
       ],
     },
@@ -574,7 +576,8 @@ const projectsData = {
     {
       id: 1,
       name: "My Portfolio",
-      description: "The complete portfolio website hosted using github pages (gh-pages). Visit the website here : ",
+      description:
+        "The complete portfolio website hosted using github pages (gh-pages). Visit the website here : ",
       createdAt: "2021-03-06",
       liveUrl: "https://www.subhamraoniar.com/",
       gitUrl: "https://github.com/SubhamRaoniar28/My-React-Portfolio",
@@ -582,7 +585,8 @@ const projectsData = {
     {
       id: 2,
       name: "Covid-19 Tracker",
-      description: "Covid-19-tracker is a react app made to track, check status and count of Corona virus affected countries and people.",
+      description:
+        "Covid-19-tracker is a react app made to track, check status and count of Corona virus affected countries and people.",
       createdAt: "2021-03-06",
       liveUrl: "https://covid-19-tracker-e4bda.web.app/",
       gitUrl: "https://github.com/SubhamRaoniar28/Covid-19-tracker",
@@ -590,13 +594,15 @@ const projectsData = {
     {
       id: 3,
       name: "Restaurante Confusion",
-      description: "This project is a Restaurant web application called Confusion made using React and Firebase.",
+      description:
+        "This project is a Restaurant web application called Confusion made using React and Firebase.",
       createdAt: "2021-03-06",
       liveUrl: "https://confusion-restaurant-95beb.web.app/home",
-      gitUrl: "https://github.com/SubhamRaoniar28/confusion-react-firebase-final",
-    }
-  ]
-}
+      gitUrl:
+        "https://github.com/SubhamRaoniar28/confusion-react-firebase-final",
+    },
+  ],
+};
 
 // Contact Page
 const contactPageData = {
@@ -615,8 +621,7 @@ const contactPageData = {
   },
   addressSection: {
     title: "Address",
-    subtitle:
-      "Whitefield, Bangalore, Karnataka, 560066",
+    subtitle: "Whitefield, Bangalore, Karnataka, 560066",
     avatar_image_path: "address_image.svg",
     location_map_link: "",
   },

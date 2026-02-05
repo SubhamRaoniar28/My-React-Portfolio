@@ -31,7 +31,10 @@ export default function Contact() {
         <div className="contact-image-div">
           <img
             alt="Saad Working"
-            src={require("../../assests/images/contactMail.png")}
+            src={
+              new URL("../../assests/images/contactMail.png", import.meta.url)
+                .href
+            }
           ></img>
         </div>
       </div>
